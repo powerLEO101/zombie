@@ -4,7 +4,7 @@ use serde::Deserialize;
 #[derive(Deserialize, Clone, Debug)]
 pub struct RegexVerifierWitness<const CiphertextLen: usize> {
     pub t: Vec<String>,
-    pub tu: Vec<u8>
+    pub tu: Vec<u8>,
 }
 
 impl<const CiphertextLen: usize> Witness for RegexVerifierWitness<CiphertextLen> {
@@ -21,7 +21,7 @@ impl<const CiphertextLen: usize> RegexVerifierWitness<CiphertextLen> {
     pub fn default() -> Self {
         Self {
             t: vec!["0".to_string(), "0".to_string(), "0".to_string()],
-            tu: vec![0, 0, 0]
+            tu: vec![0, 0, 0],
         }
     }
 }
@@ -29,7 +29,7 @@ impl<const CiphertextLen: usize> RegexVerifierWitness<CiphertextLen> {
 #[derive(Deserialize, Clone)]
 pub struct RegexProverWitness<const CiphertextLen: usize> {
     pub t: Vec<String>,
-    pub tu: Vec<u8>
+    pub tu: Vec<u8>,
 }
 
 impl<const CiphertextLen: usize> Witness for RegexProverWitness<CiphertextLen> {
@@ -46,7 +46,7 @@ impl<const CiphertextLen: usize> RegexProverWitness<CiphertextLen> {
     pub fn default() -> Self {
         Self {
             t: vec!["0".to_string(), "0".to_string(), "0".to_string()],
-            tu: vec![0, 0, 0]
+            tu: vec![0, 0, 0],
         }
     }
 }

@@ -1,0 +1,10 @@
+[package]
+name = "ark-curve-constraint-tests"
+version = "0.3.0"
+edition = "2018"
+
+[features]
+default = []
+
+[lib]
+path = "src/lib.rs"

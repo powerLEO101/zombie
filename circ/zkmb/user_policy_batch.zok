@@ -1,0 +1,15 @@
+import "./user_policy.zok" as user_policy
+// from "Util.zok" import u8_to_field
+
+const u32 STR_LENGTH = 2000
+const u32 BATCH_SIZE = 1
+const u32 TOTAL_LENGTH = BATCH_SIZE * STR_LENGTH
+
+def main(field[TOTAL_LENGTH] t, u8[TOTAL_LENGTH] tu) -> bool:
+	//for u32 i in 0..TOTAL_LENGTH do
+		//assert(t[i] == u8_to_field(tu[i]))
+	//endfor
+	for u32 d in 0..BATCH_SIZE do
+		assert(user_policy(t[d * STR_LENGTH..(d + 1) * STR_LENGTH], tu[d * STR_LENGTH..(d + 1) * STR_LENGTH]) == false)
+	endfor
+	return false
