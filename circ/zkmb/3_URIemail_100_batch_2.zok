@@ -1,0 +1,11 @@
+import "./3_URIemail_100.zok" as uri_email
+
+const u32 STR_LENGTH = 100
+const u32 BATCH_SIZE = 2
+const u32 TOTAL_LENGTH = BATCH_SIZE * STR_LENGTH
+
+def main(field[TOTAL_LENGTH] t, u8[TOTAL_LENGTH] tu) -> bool:
+	for u32 d in 0..BATCH_SIZE do
+		assert(uri_email(t[d * STR_LENGTH..(d + 1) * STR_LENGTH], tu[d * STR_LENGTH..(d + 1) * STR_LENGTH]) == false)
+	endfor
+	return false

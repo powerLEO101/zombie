@@ -1755,10 +1755,112 @@ fn zk_test() {
             should_generate,
             benchmark_method,
         ),
-        "user_policy_batch" => benchmark_one_circuit(
-            "user_policy_batch",
+        "user_policy_100" | "user_policy_100_batch_1" | "3_URIemail_100_batch_1" => {
+            benchmark_one_circuit(
+                args[1].as_str(),
+                vec![RegexProverWitness::<100>::default()],
+                vec![RegexVerifierWitness::<100>::default()],
+                should_generate,
+                benchmark_method,
+            )
+        }
+        "user_policy_100_batch_2" | "3_URIemail_100_batch_2" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<200>::default()],
+            vec![RegexVerifierWitness::<200>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_100_batch_4" | "3_URIemail_100_batch_4" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<400>::default()],
+            vec![RegexVerifierWitness::<400>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_100_batch_8" | "3_URIemail_100_batch_8" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<800>::default()],
+            vec![RegexVerifierWitness::<800>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_100_batch_16" | "3_URIemail_100_batch_16" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<1600>::default()],
+            vec![RegexVerifierWitness::<1600>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_100_batch_32" | "3_URIemail_100_batch_32" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<3200>::default()],
+            vec![RegexVerifierWitness::<3200>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_100_batch_64" | "3_URIemail_100_batch_64" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<6400>::default()],
+            vec![RegexVerifierWitness::<6400>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_100_batch_128" | "3_URIemail_100_batch_128" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<12800>::default()],
+            vec![RegexVerifierWitness::<12800>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_2000" | "user_policy_2000_batch_1" | "3_URIemail_2000_batch_1" => {
+            benchmark_one_circuit(
+                args[1].as_str(),
+                vec![RegexProverWitness::<2000>::default()],
+                vec![RegexVerifierWitness::<2000>::default()],
+                should_generate,
+                benchmark_method,
+            )
+        }
+        "user_policy_2000_batch_2" | "3_URIemail_2000_batch_2" => benchmark_one_circuit(
+            args[1].as_str(),
             vec![RegexProverWitness::<4000>::default()],
             vec![RegexVerifierWitness::<4000>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_2000_batch_4" | "3_URIemail_2000_batch_4" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<8000>::default()],
+            vec![RegexVerifierWitness::<8000>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_2000_batch_8" | "3_URIemail_2000_batch_8" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<16000>::default()],
+            vec![RegexVerifierWitness::<16000>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_2000_batch_16" | "3_URIemail_2000_batch_16" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<32000>::default()],
+            vec![RegexVerifierWitness::<32000>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_2000_batch_32" | "3_URIemail_2000_batch_32" => benchmark_one_circuit(
+            args[1].as_str(),
+            vec![RegexProverWitness::<64000>::default()],
+            vec![RegexVerifierWitness::<64000>::default()],
+            should_generate,
+            benchmark_method,
+        ),
+        "user_policy_batch" => benchmark_one_circuit(
+            "user_policy_batch",
+            vec![RegexProverWitness::<8000>::default()],
+            vec![RegexVerifierWitness::<8000>::default()],
             should_generate,
             benchmark_method,
         ),
